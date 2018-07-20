@@ -58,11 +58,23 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    babel: {
+      presets: [
+        [
+          'vue-app',
+          {
+            targets:  { ie: 11 },
+            useBuiltIns: true
+          }
+        ]
+      ]
+    },
+    vendor: [ 'babel-polyfill' ],
     /*
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-      
+
       if (ctx.isServer) {
         config.externals = [
           nodeExternals({
