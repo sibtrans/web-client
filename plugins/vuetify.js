@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import Vuetify from 'vuetify'
 import colors from 'vuetify/es5/util/colors'
+import ru from '../assets/locales/ru'
+
+
 
 Vue.use(Vuetify, {
   theme: {
@@ -10,6 +13,11 @@ Vue.use(Vuetify, {
     info: colors.teal.lighten1,
     warning: colors.amber.base,
     error: colors.deepOrange.accent4,
-    success: colors.green.accent3
+    success: colors.green.accent3,
+  },
+  lang: {
+    locales: { ru },
+    current: 'ru'
   }
 })
+
