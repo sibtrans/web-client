@@ -64,7 +64,7 @@
     background: linear-gradient(
         to right bottom,
         $light_green, $dark_green),
-    url(../assets/advanced-css-course/Natours/after-S05/img/hero.jpg) center;
+    url(../static//hero.jpg) center;
     position: relative;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75vh);
 

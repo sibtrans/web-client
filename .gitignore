@@ -10,5 +10,7 @@ npm-debug.log
 # Nuxt generate
 dist
 
+assets/advanced-css-course/
+
 # IDE
 .idea
