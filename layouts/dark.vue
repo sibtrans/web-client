@@ -1,102 +1,57 @@
 <template>
-  <v-app dark>
-    <v-navigation-drawer
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      v-model="drawer"
-      fixed
-      app
-    >
-      <v-list>
-        <v-list-tile
-          router
-          :to="item.to"
-          :key="i"
-          v-for="(item, i) in items"
-          exact
-        >
-          <v-list-tile-action>
-            <v-icon v-html="item.icon"></v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title v-text="item.title"></v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
-    <v-toolbar fixed app :clipped-left="clipped">
-      <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
-      <v-btn
-        icon
-        @click.stop="miniVariant = !miniVariant"
-      >
-        <v-icon v-html="miniVariant ? 'chevron_right' : 'chevron_left'"></v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="clipped = !clipped"
-      >
-        <v-icon>web</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="fixed = !fixed"
-      >
-        <v-icon>remove</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title"></v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn
-        icon
-        @click.stop="rightDrawer = !rightDrawer"
-      >
-        <v-icon>menu</v-icon>
-      </v-btn>
-    </v-toolbar>
-    <v-content>
-      <v-container>
-        <nuxt />
-      </v-container>
-    </v-content>
-    <v-navigation-drawer
-      temporary
-      :right="right"
-      v-model="rightDrawer"
-      fixed
-    >
-      <v-list>
-        <v-list-tile @click.native="right = !right">
-          <v-list-tile-action>
-            <v-icon light>compare_arrows</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-title>Switch drawer (click me)</v-list-tile-title>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
+  <div class="wrap">
+    <header class="header">
+      <nav class="nav-primary-wrapper">
+        <ul class="nav-primary">
+          <li><a href="#">Item</a></li>
+          <li><a href="#">Item</a></li>
+          <li><a href="#">Item</a></li>
+          <li><a href="#">Item</a></li>
+          <li><a href="#">Item</a></li>
+        </ul>
+      </nav>
+    </header>
+    <nuxt/>
+  </div>
 
-    <v-footer :fixed="fixed" app>
-      <span>&copy; 2017</span>
-    </v-footer>
-
-  </v-app>
 </template>
 
 <script>
   export default {
     data() {
-      return {
-        clipped: false,
-        drawer: true,
-        fixed: false,
-        items: [
-          { icon: 'apps', title: 'Welcome', to: '/' },
-          { icon: 'bubble_chart', title: 'Inspire', to: '/inspire' }
-        ],
-        miniVariant: true ,
-        right: true,
-        rightDrawer: false,
-        title: 'Байт Транзит Континент'
-      }
+      return {}
     }
   }
 </script>
+
+<style scoped lang="scss">
+
+  .header {
+    background-color: rgba(165, 7, 29, 1);
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+  }
+
+  .nav-primary {
+    font-size: 2rem;
+    display: inline-block;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 1.5rem;
+      margin-right: 1.5rem;
+      &:first-child {
+        margin-left: 15rem;
+      }
+      a{
+        text-decoration: none;
+        text-transform: uppercase;
+        color: white;
+        &:hover {
+          color: red;
+        }
+      }
+    }
+  }
+</style>

@@ -1,14 +1,14 @@
 export default {
   dataIterator: {
-    rowsPerPageText: 'Колво:',
-    rowsPerPageAll: 'All',
+    rowsPerPageText: 'Строк:',
+    rowsPerPageAll: 'Все',
     pageText: '{0}-{1} of {2}',
     noResultsText: 'No matching records found',
     nextPage: 'Next page',
     prevPage: 'Previous page'
   },
   dataTable: {
-    rowsPerPageText: 'Rows per page:'
+    rowsPerPageText: 'Строк на странице:'
   },
   noDataText: 'Нет данных'
 }

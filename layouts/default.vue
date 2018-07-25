@@ -1,168 +1,127 @@
 <template>
-  <v-app :dark="dark">
-    <v-layout>
-      <v-navigation-drawer
-        class=""
-        :mini-variant="miniVariant"
-        :clipped="clipped"
-        v-model="drawer"
-        fixed
-        app
-      >
-        <v-list>
-          <v-btn
-            v-bind:class="miniIcon"
-            v-if="drawer"
-            icon
-            @click.stop="miniVariant = !miniVariant"
-          >
-            <v-icon v-html="miniVariant ? 'chevron_right' : 'chevron_left'"></v-icon>
-          </v-btn>
+  <div class="wrap">
+    <header class="header">
+      <div class="nav-container">
 
-          <v-list-tile
+        <nav id="navbar-top">
+          <div class="logo"><span class="logo-img"><a href="/"><img src="../static/logo_burned.png" width="42" height="42"
+                                                                    alt="1"></a></span></div>
+          <div class="logo-label"><span class="logo-label-first">Байт </span><span class="logo-label-second">Транзит</span></div>
+          <ul>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+          </ul>
+        </nav>
 
-            router
-            :to="item.to"
-            :key="i"
-            v-for="(item, i) in items"
-            exact
-          >
-
-            <v-list-tile-action>
-
-              <v-icon v-html="item.icon"></v-icon>
-            </v-list-tile-action>
-            <v-list-tile-content>
-              <v-list-tile-title v-text="item.title"></v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-        </v-list>
-      </v-navigation-drawer>
-
-      <v-toolbar id="qwe" i fixed app :clipped-left="clipped" absolute scroll-off-screen
-                 scroll-target="#scrolling-techniques">
-        <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
-        <!--<v-btn-->
-        <!--v-if="drawer"-->
-        <!--icon-->
-        <!--@click.stop="miniVariant = !miniVariant"-->
-        <!--&gt;-->
-        <!--<v-icon v-html="miniVariant ? 'chevron_right' : 'chevron_left'"></v-icon>-->
-        <!--</v-btn>-->
-        <!--<v-btn-->
-        <!--icon-->
-        <!--@click.stop="clipped = !clipped"-->
-        <!--&gt;-->
-        <!--<v-icon>web</v-icon>-->
-        <!--</v-btn>-->
-        <v-btn
-          icon
-          @click.stop="dark = !dark"
-        >
-          <v-icon>timelapse</v-icon>
-        </v-btn>
-        <!--<v-btn-->
-        <!--icon-->
-        <!--@click.stop="fixed = !fixed"-->
-        <!--&gt;-->
-        <!--<v-icon>remove</v-icon>-->
-        <!--</v-btn>-->
-
-        <v-toolbar-title v-text="title"></v-toolbar-title>
-        <v-spacer></v-spacer>
-        <!--<v-btn-->
-        <!--icon-->
-        <!--@click.stop="rightDrawer = !rightDrawer"-->
-        <!--&gt;-->
-        <!--<v-icon>menu</v-icon>-->
-        <!--</v-btn>-->
-        <v-toolbar-items class="hidden-sm-and-down">
-          <v-btn flat>Личный кабинет</v-btn>
-          <v-btn flat>Новосибирск</v-btn>
-          <v-btn flat>Link Three</v-btn>
-        </v-toolbar-items>
-
-
-      </v-toolbar>
-      <div
-        id="scrolling-techniques"
-        class="scroll-y"
-        style="max-height: 600px"
-      >
+        <nav id="navbar-primary">
+          <ul>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+          </ul>
+        </nav>
       </div>
 
-      <v-content id="content" grid-list-xl text-xs-center>
 
-        <v-container grid-list-xl text-xs-center>
-          <nuxt/>
-        </v-container>
-      </v-content>
-      <v-navigation-drawer
-        temporary
-        :right="right"
-        v-model="rightDrawer"
-        fixed
-      >
-        <v-list>
-          <v-list-tile @click.native="right = !right">
-            <v-list-tile-action>
-              <v-icon light>compare_arrows</v-icon>
-            </v-list-tile-action>
-            <v-list-tile-title>Switch drawer (click me)</v-list-tile-title>
-          </v-list-tile>
-        </v-list>
-      </v-navigation-drawer>
+    </header>
 
-      <v-footer :fixed="fixed" app>
-        <span>&copy; 2017</span>
-      </v-footer>
-    </v-layout>
+    <nuxt/>
+  </div>
 
-  </v-app>
 </template>
 
 <script>
   export default {
     data() {
-      return {
-        miniIcon: 'defaultMiniIcon',
-        color: 'red',
-        colorText: 'white',
-        dark: false,
-        clipped: false,
-        drawer: true,
-        fixed: false,
-        items: [
-          {icon: 'home', title: 'Главная', to: '/'},
-          {icon: 'send', title: 'Отправить заявку', to: '/inspire'}
-        ],
-        miniVariant: true,
-        right: true,
-        rightDrawer: false,
-        title: 'Байт Транзит Континент'
-      }
-    },
-    watch: {
-      dark: function () {
-        if (this.dark === true) {
-          this.color = 'orange'
-          this.colorText = 'white'
-        } else {
-          this.color = 'red'
-          this.colorText = 'white'
-        }
-      },
-      miniVariant: function () {
-        if (this.miniVariant === true) {
-          this.miniIcon = 'defaultMiniIcon'
-        } else {
-          this.miniIcon = 'rightMiniIcon'
-        }
-      }
+      return {}
     }
   }
 </script>
 
 <style scoped lang="scss">
+  @import "../assets/styles/main";
+
+  @mixin nav-link($color) {
+    a {
+      color: $color;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+  }
+
+  .header {
+
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    @include clearfix;
+    background: rgba(249, 226, 221, 0.7);
+
+    .nav-container {
+      font-size: 2rem;
+      width: 1100px;
+      margin: 0 auto;
+
+      #navbar-top {
+        height: 6rem;
+
+        position: relative;
+        width: 1100px;
+
+        .logo {
+          float: left;
+          padding: 1rem 1rem 0rem 5rem ;
+
+        }
+
+        .logo-label {
+          float: left;
+          font-size: 2.8rem;
+          font-weight: 600;
+          padding-top: .7rem;
+          &-first {
+            color: $color-primary;
+          }
+          &-second {
+            color: $color-secondary;
+          }
+        }
+
+
+        li {
+          float: left;
+          list-style: none;
+          padding: 1.1rem 3rem 1rem 1rem;
+          &:first-child {
+            padding-left: 30rem;
+          }
+        }
+      }
+
+      #navbar-primary {
+        height: 7rem;
+
+        position: relative;
+        width: 1100px;
+        li {
+          float: right;
+          list-style: none;
+          color: $color-secondary;
+          padding: 2rem 2rem 2rem 2rem;
+          &:first-child {
+            padding-right: 10vh;
+          }
+        }
+      }
+    }
+
+
+  }
 
 </style>

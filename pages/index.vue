@@ -1,70 +1,134 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
-      <div class="text-xs-center">
-        <logo/>
-        <vuetify-logo/>
-      </div>
-      <v-card>
-        <v-card-title class="headline">Welcome to the Vuetify + Nuxt.js template</v-card-title>
-        <v-card-text
+  <main class="container">
 
-        >
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>For more information on Vuetify, check out the <a href="https://vuetifyjs.com" target="_blank">documentation</a>.</p>
-          <p>If you have questions, please join the official <a href="https://chat.vuetifyjs.com/" target="_blank" title="chat">discord</a>.</p>
-          <p>Find a bug? Report it on the github <a href="https://github.com/vuetifyjs/vuetify/issues" target="_blank" title="contribute">issue board</a>.</p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>For more information on Vuetify, check out the <a href="https://vuetifyjs.com" target="_blank">documentation</a>.</p>
-          <p>If you have questions, please join the official <a href="https://chat.vuetifyjs.com/" target="_blank" title="chat">discord</a>.</p>
-          <p>Find a bug? Report it on the github <a href="https://github.com/vuetifyjs/vuetify/issues" target="_blank" title="contribute">issue board</a>.</p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>For more information on Vuetify, check out the <a href="https://vuetifyjs.com" target="_blank">documentation</a>.</p>
-          <p>If you have questions, please join the official <a href="https://chat.vuetifyjs.com/" target="_blank" title="chat">discord</a>.</p>
-          <p>Find a bug? Report it on the github <a href="https://github.com/vuetifyjs/vuetify/issues" target="_blank" title="contribute">issue board</a>.</p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>For more information on Vuetify, check out the <a href="https://vuetifyjs.com" target="_blank">documentation</a>.</p>
-          <p>If you have questions, please join the official <a href="https://chat.vuetifyjs.com/" target="_blank" title="chat">discord</a>.</p>
-          <p>Find a bug? Report it on the github <a href="https://github.com/vuetifyjs/vuetify/issues" target="_blank" title="contribute">issue board</a>.</p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>For more information on Vuetify, check out the <a href="https://vuetifyjs.com" target="_blank">documentation</a>.</p>
-          <p>If you have questions, please join the official <a href="https://chat.vuetifyjs.com/" target="_blank" title="chat">discord</a>.</p>
-          <p>Find a bug? Report it on the github <a href="https://github.com/vuetifyjs/vuetify/issues" target="_blank" title="contribute">issue board</a>.</p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
+    <section class="section-primary">
+
+      <div class="section-primary__text-box">
+
+        <h1 class="heading-primary">
+
+          <div class="heading-primary--main">
+            <span class="heading-primary--main---1">Байт</span>
+            <span class="heading-primary--logo"><a href="/"><img src="../static/logo_burned.png" width="140" height="140"
+                                                        alt="1"></a></span>
+            <span class="heading-primary--main---2">Транзит</span>
           </div>
-          <hr class="my-3">
-          <a href="https://nuxtjs.org/" target="_blank">Nuxt Documentation</a>
-          <br>
-          <a href="https://github.com/nuxt/nuxt.js" target="_blank">Nuxt GitHub</a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="primary" flat nuxt to="/inspire">Continue</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-flex>
-  </v-layout>
+
+          <span class="heading-primary--sub">Транспорт & Логистика</span>
+        </h1>
+
+        <order-button/>
+      </div>
+    </section>
+
+    <section class="section-about">
+      <h1>Hello Nuxt</h1>
+
+    </section>
+    <section class="section-about">
+      <h1>Hello Nuxt</h1>
+
+    </section>
+    <section class="section-about">
+      <h1>Hello Nuxt</h1>
+
+    </section>
+  </main>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
+  import Logo from '~/components/Logo.vue'
+  import VuetifyLogo from '~/components/VuetifyLogo.vue'
+  import OrderButton from "../components/OrderButton";
 
-export default {
-  components: {
-    Logo,
-    VuetifyLogo
-  },
-
-}
+  export default {
+    components: {
+      OrderButton,
+      Logo,
+      VuetifyLogo
+    }
+  }
 </script>
 
-<style scoped>
+
+<style scoped lang="scss">
+  @import "../assets/styles/main";
+
+  @mixin moveIn($x0,$x80, $x100) {
+
+  }
+
+  .section-primary {
+    height: 88vh;
+    background-size: cover;
+    background: linear-gradient(
+        to right bottom,
+        $light_green, $dark_green),
+    url(../assets/advanced-css-course/Natours/after-S05/img/hero.jpg) center;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75vh);
+
+    &__text-box {
+      position: absolute;
+      top: 44%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-shadow: .5rem 1rem 1.8rem rgba($color-black, .3);
+    }
+    .heading-primary {
+      text-transform: uppercase;
+      letter-spacing: 0.3rem;
+
+      &--main {
+        font-weight: 700;
+        font-size: 8rem;
+        color: $color-primary;
+        display: inline-block;
+
+      }
+
+      &--main---1 {
+        display: block;
+        animation-name: moveInLeftMain;
+        animation-duration: 1.6s;
+
+      }
+
+      &--logo {
+        position: absolute;
+        margin-left: 25rem;
+        top: -3rem;
+        animation: moveHere 1.65s  0.3s;
+        animation-fill-mode: backwards;
+      }
+
+      &--main---2 {
+        display: block;
+        color: $color-secondary;
+        margin-top: -5.6rem;
+        animation-name: moveInRightMain;
+        animation-duration: 1.65s;
+      }
+
+      &--sub {
+        display: inherit;
+        font-size: 1.8rem;
+        font-weight: 600;
+        letter-spacing: 0.1rem;
+        margin-left: 12.5rem;
+        animation-name: moveInRightSub;
+        animation-duration: 1.7s;
+        color: $color-primary;
+        margin-top: -2.3rem;
+      }
+    }
+  }
+
+  .section-about {
+    background-color: #dbe3ff;
+    padding: 25rem 0;
+    margin-top: -13vh;
+  }
+
 
 </style>

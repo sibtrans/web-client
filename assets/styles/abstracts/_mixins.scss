@@ -1,0 +1,24 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+@mixin moveIn($x0,$x80,$x100) {
+  0% {
+    opacity: 0;
+    transform: translateX($x0);
+  }
+
+  80% {
+    transform: translateX($x80);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate($x100);
+  }
+
+}

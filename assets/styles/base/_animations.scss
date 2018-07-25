@@ -1,0 +1,73 @@
+@import "../abstracts/mixins";
+
+@keyframes moveInLeftMain {
+  @include moveIn(7rem, -1.4rem, 0)
+}
+
+@keyframes moveInRightMain {
+  @include moveIn(-10rem, 1.7rem, 0)
+}
+
+@keyframes moveInRightSub {
+  @include moveIn(12rem, -1.2rem, 0)
+}
+
+@keyframes moveHere {
+  @include moveIn(0, 0, 0)
+}
+
+@keyframes moveHere2 {
+  0% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+
+  10% {
+    opacity: 0.06;
+    transform: translateX(0);
+  }
+
+  20% {
+    opacity: 0.1;
+    transform: translateX(0);
+  }
+
+  30% {
+    opacity: 0.14;
+    transform: translateX(0);
+  }
+  40% {
+    opacity: 0.18;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 0.22;
+    transform: translateX(0);
+  }
+  60% {
+    opacity: 0.26;
+    transform: translateX(0);
+  }
+  70% {
+    opacity: 0.36;
+    transform: translateX(0);
+  }
+  80% {
+    opacity: 0.47;
+    transform: translateX(0);
+  }
+
+  90% {
+    transform: translateX(0);
+    opacity: 0.74;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+
+
+
